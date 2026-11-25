@@ -2,13 +2,14 @@
 
 Projet Technologies Web 2A12 — ESPRIT 2026/2027 · Groupe **VERTEX**
 
-Application web en PHP 8 (architecture MVC, PDO, MySQL) sans framework.
+Application web en PHP 8 (architecture MVC, PDO, MySQL) sans framework. Le scanner utilise TensorFlow.js (modèle MobileNet) dans le navigateur : une connexion Internet est nécessaire pour le charger.
 
 ## Modules
 
 | Module | Responsable | État |
 |---|---|---|
 | Utilisateurs (inscription, connexion, profil, mot de passe oublié, back office CRUD) | Hamza Dellai | fait |
+| Scanner IA (reconnaissance du déchet par photo, EcoPoints, back office matériaux et scans) | Hamza Dellai | fait |
 
 ## Lancer le projet
 

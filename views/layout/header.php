@@ -13,7 +13,11 @@
         <?php if (currentUser()): ?>
             <?php if (currentUser()['role'] === 'admin'): ?>
                 <a href="index.php?r=admin/users">Utilisateurs</a>
+                <a href="index.php?r=admin/materiaux">Matériaux</a>
+                <a href="index.php?r=admin/scans">Scans</a>
             <?php endif; ?>
+            <a href="index.php?r=scanner">Scanner</a>
+            <a href="index.php?r=scanner/historique">Mes scans</a>
             <a href="index.php?r=profile">Mon profil</a>
             <form method="post" action="index.php?r=logout" class="inline">
                 <input type="hidden" name="csrf" value="<?= e(csrf()) ?>">

@@ -6,6 +6,10 @@ const rules = {
     min: (value, n) => value.trim().length >= Number(n) || 'Au moins ' + n + ' caractères.',
     email: (value) => /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(value) || 'Adresse email invalide.',
     password: (value) => (value.length >= 8 && /[0-9]/.test(value)) || 'Au moins 8 caractères, dont un chiffre.',
+    between: (value, range) => {
+        const [min, max] = range.split(',').map(Number);
+        return (/^\d+$/.test(value.trim()) && Number(value) >= min && Number(value) <= max) || 'Un nombre entre ' + min + ' et ' + max + '.';
+    },
     same: (value, other, form) => value === form.elements[other].value || 'Les deux mots de passe ne correspondent pas.',
 };
 
