@@ -10,9 +10,11 @@
 <header class="nav">
     <a class="logo" href="index.php"><span class="logo-mark">♻</span> EcoLoop</a>
     <nav>
+        <a href="index.php?r=centres">Centres</a>
         <?php if (currentUser()): ?>
             <?php if (currentUser()['role'] === 'admin'): ?>
                 <a href="index.php?r=admin/users">Utilisateurs</a>
+                <a href="index.php?r=admin/centres">Gérer les centres</a>
             <?php endif; ?>
             <a href="index.php?r=profile">Mon profil</a>
             <form method="post" action="index.php?r=logout" class="inline">

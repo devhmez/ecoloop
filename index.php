@@ -4,9 +4,11 @@ session_start();
 require_once __DIR__ . '/helpers/functions.php';
 require_once __DIR__ . '/controllers/AuthController.php';
 require_once __DIR__ . '/controllers/UserController.php';
+require_once __DIR__ . '/controllers/CentreController.php';
 
 $auth = new AuthController();
 $users = new UserController();
+$centres = new CentreController();
 
 $routes = [
     'register'    => [$auth, 'register'],
@@ -19,6 +21,11 @@ $routes = [
     'admin/users' => [$users, 'index'],
     'admin/form'  => [$users, 'form'],
     'admin/delete' => [$users, 'delete'],
+    'centres'              => [$centres, 'index'],
+    'admin/centres'        => [$centres, 'adminIndex'],
+    'admin/centre-form'    => [$centres, 'adminForm'],
+    'admin/centre-delete'  => [$centres, 'adminDelete'],
+    'admin/centres-export' => [$centres, 'adminExport'],
 ];
 
 $route = $_GET['r'] ?? (currentUser() ? 'profile' : 'login');
